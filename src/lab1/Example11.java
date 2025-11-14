@@ -13,7 +13,7 @@ public class Example11 {
         int birth = in.nextInt();
 
         int age = 2025 - birth;
-        System.out.println("Your name is " + name + " " + "you are" + " " + age + " " + "years old");
+        System.out.println("Your name is " + name + " " + "and you are" + " " + age + " " + "years old");
         in.close();
     }
 }
