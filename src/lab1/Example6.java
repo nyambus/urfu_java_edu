@@ -16,7 +16,6 @@ public class Example6 {
         String otch = in.nextLine();
 
         System.out.println("Hello " + surname + " " + name + " " + otch);
-
         in.close();
     }
 }

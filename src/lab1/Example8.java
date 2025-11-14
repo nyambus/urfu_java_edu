@@ -9,14 +9,13 @@ public class Example8 {
         System.out.println("Input day of the week: ");
         String day = in.nextLine();
 
-        System.out.println("Input month: ");
+        System.out.println("Input month name: ");
         String month = in.nextLine();
 
         System.out.println("Input date: ");
         int date = in.nextInt();
 
         System.out.println(day + ", " + month + ", " + date);
-
         in.close();
     }
 }

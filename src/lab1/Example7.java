@@ -14,7 +14,6 @@ public class Example7 {
 
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
-
         in.close();
     }
 }
