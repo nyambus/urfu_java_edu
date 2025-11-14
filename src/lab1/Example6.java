@@ -1,0 +1,22 @@
+package lab1;
+
+import java.util.Scanner;
+
+public class Example6 {
+    static void main() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Input surname: ");
+        String surname = in.nextLine();
+
+        System.out.println("Input name: ");
+        String name = in.nextLine();
+
+        System.out.println("Input otchestvo: ");
+        String otch = in.nextLine();
+
+        System.out.println("Hello " + surname + " " + name + " " + otch);
+
+        in.close();
+    }
+}
