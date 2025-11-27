@@ -8,7 +8,7 @@ public class example2 {
         Scanner in = new Scanner(System.in);
         System.out.println("Type a number: ");
         int a = in.nextInt();
-        if (((a % 4) == 0) && a >= 10) {
+        if (((a % 5) == 2) && ((a % 7) == 1)) {
             System.out.println("Число удовлетворяет условиям!");
         }
         else {
