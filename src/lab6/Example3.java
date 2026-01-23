@@ -11,7 +11,6 @@ public class Example3 {
         }
         System.out.println("max val: " + max);
     }
-
     static void calcMin(int ... arr) {
         int min = arr[0];
         for (int i = 0; i < arr.length; i++) {

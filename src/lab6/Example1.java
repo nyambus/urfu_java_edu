@@ -3,7 +3,6 @@ package lab6;
 public class Example1 {
     char c;
     String text;
-
     void set(char val) {
         c = val;
         System.out.println("char is: " + c);
@@ -13,7 +12,6 @@ public class Example1 {
         text = val;
         System.out.println("text is: " + text);
     }
-
     void set(char[] arr) {
         if (arr.length == 1) {
             c = arr[0];
@@ -23,7 +21,6 @@ public class Example1 {
             System.out.println("array to text: " + text);
         }
     }
-
     public static void main(String[] args) {
         Example1 t = new Example1();
         t.set('K');
