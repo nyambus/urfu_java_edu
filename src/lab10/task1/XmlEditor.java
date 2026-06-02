@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.Scanner;
 
 public class XmlEditor {
-    private static final String FILE_PATH = "src/lab10/task1/songs.xml"; // Имя файла для песен
+    private static final String FILE_PATH = "src/lab10/task1/songs.xml";
 
     public static void main(String[] args) {
         try {
@@ -47,19 +47,28 @@ public class XmlEditor {
 
             System.out.println("\nВведите исполнителя для поиска:");
             String searchArtist = scanner.nextLine();
-            NodeList songs = doc.getElementsByTagName("song");
-            for (int i = 0; i < songs.getLength(); i++) {
-                Element el = (Element) songs.item(i);
-                if (el.getElementsByTagName("artist").item(0).getTextContent().equalsIgnoreCase(searchArtist)) {
-                    System.out.println("Найдена песня: " + el.getElementsByTagName("title").item(0).getTextContent());
+            NodeList songList = doc.getElementsByTagName("song");
+            boolean found = false;
+            for (int i = 0; i < songList.getLength(); i++) {
+                Element el = (Element) songList.item(i);
+                String a = el.getElementsByTagName("artist").item(0).getTextContent();
+                if (a.equalsIgnoreCase(searchArtist)) {
+                    System.out.println("Найдена песня: "
+                        + el.getElementsByTagName("title").item(0).getTextContent());
+                    found = true;
                 }
+            }
+            if (!found) {
+                System.out.println("Песен исполнителя '" + searchArtist + "' не найдено.");
             }
 
             System.out.println("\nВведите название песни для удаления:");
             String delTitle = scanner.nextLine();
-            for (int i = 0; i < songs.getLength(); i++) {
-                Element el = (Element) songs.item(i);
-                if (el.getElementsByTagName("title").item(0).getTextContent().equalsIgnoreCase(delTitle)) {
+            songList = doc.getElementsByTagName("song");
+            for (int i = songList.getLength() - 1; i >= 0; i--) {
+                Element el = (Element) songList.item(i);
+                String t = el.getElementsByTagName("title").item(0).getTextContent();
+                if (t.equalsIgnoreCase(delTitle)) {
                     el.getParentNode().removeChild(el);
                     System.out.println("Песня удалена.");
                 }
@@ -67,7 +76,7 @@ public class XmlEditor {
             saveXml(doc);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 

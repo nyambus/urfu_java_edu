@@ -1,2 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<playlist/>
+<playlist>
+        
+    <song>
+                
+        <title>Bohemian Rhapsody</title>
+                
+        <artist>Queen</artist>
+                
+        <year>1975</year>
+            
+    </song>
+        
+    <song>
+                
+        <title>Stairway to Heaven</title>
+                
+        <artist>Led Zeppelin</artist>
+                
+        <year>1971</year>
+            
+    </song>
+        
+    <song>
+                
+        <title>Hotel California</title>
+                
+        <artist>Eagles</artist>
+                
+        <year>1977</year>
+            
+    </song>
+    
+</playlist>
