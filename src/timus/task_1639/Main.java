@@ -1,0 +1,14 @@
+package timus.task_1639;
+
+import java.util.Scanner;
+
+public class Main {
+    // 123
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int m = in.nextInt();
+        int n = in.nextInt();
+        in.close();
+        System.out.println((m * n) % 2 == 0 ? "[:=[first]" : "[second]=:]");
+    }
+}
