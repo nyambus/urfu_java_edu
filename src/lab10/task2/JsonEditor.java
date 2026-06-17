@@ -3,20 +3,36 @@ package lab10.task2;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class JsonEditor {
-    private static final String FILE_PATH = "src/lab10/task1/songs.json";
+    private static final String FILE_PATH = "src/lab10/task2/songs.json";
 
     public static void main(String[] args) {
         try {
             Scanner scanner = new Scanner(System.in, "UTF-8");
             JSONParser parser = new JSONParser();
-            JSONObject root = (JSONObject) parser.parse(new FileReader(FILE_PATH));
-            JSONArray songs = (JSONArray) root.get("songs");
+            File inputFile = new File(FILE_PATH);
+            JSONObject root;
+            JSONArray songs;
+
+            if (!inputFile.exists()) {
+                root = new JSONObject();
+                songs = new JSONArray();
+                root.put("songs", songs);
+                saveJson(root);
+            } else {
+                root = (JSONObject) parser.parse(new FileReader(FILE_PATH));
+                songs = (JSONArray) root.get("songs");
+                if (songs == null) {
+                    songs = new JSONArray();
+                    root.put("songs", songs);
+                }
+            }
 
             System.out.println("Введите название песни для добавления:");
             String title = scanner.nextLine();

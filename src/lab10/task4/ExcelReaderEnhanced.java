@@ -20,12 +20,13 @@ public class ExcelReaderEnhanced {
                 return;
             }
 
-            Sheet sheet = workbook.getSheetAt(0);
-            if (sheet == null) {
+            if (workbook.getNumberOfSheets() == 0) {
                 System.out.println("Ошибка: лист не найден. Проверьте, что файл содержит хотя бы один лист.");
                 workbook.close();
                 return;
             }
+
+            Sheet sheet = workbook.getSheetAt(0);
 
             System.out.println("Чтение листа: " + sheet.getSheetName());
             for (Row row : sheet) {
