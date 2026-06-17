@@ -12,10 +12,9 @@ public class Main {
                 a[i][j] = in.nextInt();
         in.close();
         for (int d = 0; d < 2 * n - 1; d++) {
-            for (int i = 0; i <= d; i++) {
+            for (int i = Math.min(d, n - 1); i >= Math.max(0, d - n + 1); i--) {
                 int j = d - i;
-                if (i < n && j < n && j >= 0)
-                    System.out.print(a[i][j] + " ");
+                System.out.print(a[i][j] + " ");
             }
         }
     }
